@@ -4,8 +4,9 @@
 
 ```shell
 flux bootstrap github \
+  --components=source-controller,kustomize-controller,notification-controller \
   --owner=omarvides \
-  --repository=gitops-toolkit-lab-demo \
+  --repository=el-toolkit-lab-demo \
   --path=clusters/production \
   --personal
 ```
