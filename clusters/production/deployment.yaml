@@ -4,6 +4,14 @@ metadata:
   name: nginx
   namespace: nginx
 spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingRequiredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: type
+            operator: In
+            values: persistent
   selector:
     matchLabels:
       app: nginx
@@ -14,7 +22,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:latest
+        image: nginx:1.19.6-alpine
         resources:
           limits:
             memory: "128Mi"
@@ -24,5 +32,5 @@ spec:
       tolerations:
       - key: "taint"
         operator: "Equal"
-        value: "flux"
+        value: "non-persistent"
         effect: "NoSchedule"
