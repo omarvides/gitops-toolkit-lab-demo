@@ -12,13 +12,13 @@ spec:
       labels:
         app: nginx
     affinity:
-    nodeAffinity:
-      requiredDuringSchedulingRequiredDuringExecution:
-        nodeSelectorTerms:
-        - matchExpressions:
-          - key: type
-            operator: In
-            values: persistent
+      nodeAffinity:
+        requiredDuringSchedulingRequiredDuringExecution:
+          nodeSelectorTerms:
+          - matchExpressions:
+            - key: type
+              operator: In
+              values: persistent
     spec:
       containers:
       - name: nginx
