@@ -23,12 +23,13 @@ spec:
         - containerPort: 80
       affinity:
         nodeAffinity:
-          requiredDuringSchedulingRequiredDuringExecution:
+          requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
             - matchExpressions:
               - key: type
                 operator: In
-                values: persistent
+                values: 
+                  - persistent
       # tolerations:
       # - key: "taint"
       #   operator: "Equal"
