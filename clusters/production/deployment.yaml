@@ -21,15 +21,15 @@ spec:
             cpu: "100m"
         ports:
         - containerPort: 80
-      affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: type
-                operator: In
-                values: 
-                  - persistent
+      # affinity:
+      #   nodeAffinity:
+      #     requiredDuringSchedulingIgnoredDuringExecution:
+      #       nodeSelectorTerms:
+      #       - matchExpressions:
+      #         - key: type
+      #           operator: In
+      #           values: 
+      #             - persistent
       # tolerations:
       # - key: "taint"
       #   operator: "Equal"
