@@ -23,7 +23,7 @@ spec:
         - containerPort: 80
       affinity:
         nodeAffinity:
-          requiredDuringSchedulingRequiredDuringExecution:
+          requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
             - matchExpressions:
               - key: type
