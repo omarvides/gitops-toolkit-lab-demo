@@ -30,8 +30,8 @@ spec:
       #           operator: In
       #           values: 
       #             - persistent
-      # tolerations:
-      # - key: "taint"
-      #   operator: "Equal"
-      #   value: "non-persistent"
-      #   effect: "NoSchedule"
+      tolerations:
+      - key: "taint"
+        operator: "Equal"
+        value: "non-persistent"
+        effect: "NoSchedule"
